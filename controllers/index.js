@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const loginRouter = requier('./login-routes.js');
+const loginRouter = require('./login-routes.js');
 const signupRoutes = require('./signup-routes');
 const homeRoutes = require('./homepage-router');
 const createRecipeRouter = require('./create-recipe-router');

@@ -15,11 +15,9 @@ Recipe.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1000),
             allowNull: false,         
         }  ,
         user_id: {

@@ -3,14 +3,15 @@ const User = require('./user');
 const Recipe = require('./recipe');
 const Review = require('./review');
 const Ingredient = require('./ingredient');
+const RecipeIngredients = require('./recipe-ingredients');
 
 // Association Section
 
 // User-Recipe Relationship
-User.hasMany(Recipe, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-});
+// User.hasMany(Recipe, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE',
+// });
 
 Recipe.belongsTo(User, {
     foreignKey: 'user_id',
@@ -37,11 +38,14 @@ Recipe.hasMany(Ingredient, {
 Ingredient.belongsToMany(Recipe, {
     foreignKey: 'ingredient_id',
     onDelete: 'CASCADE',
+    through: {
+        model: RecipeIngredients
+    }
 });
 
 // Recipe-Review Relationship
 Recipe.hasMany(Review, {
-    foreignKey: 'recpie_id',
+    foreignKey: 'recipe_id',
     onDelete: 'CASCADE',
 });
 
@@ -56,4 +60,5 @@ module.exports = {
     Recipe,
     Review,
     Ingredient,
+    RecipeIngredients
 };
