@@ -4,8 +4,8 @@ const { Recipe, Review, Ingredient, RecipeIngredients } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
-    const recipeData = await Recipe.findAll({
+router.get('/', withAuth, async (req, res) => {
+        const recipeData = await Recipe.findAll({
         include: { model: Review, model: RecipeIngredients },
     });
     const recipes = recipeData.map((recipe) => 
