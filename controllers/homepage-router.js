@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Recipe, Review, Ingedient } = require('../models');
+const { Recipe, Review, Ingedient, RecipeIngredients } = require('../models');
 
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
     const recipeData = await Recipe.findAll({
-        include: { model: Review },
+        include: { model: Review, model: RecipeIngredients },
     });
     const recipes = recipeData.map((recipe) => 
     recipe.get({ plain: true })
