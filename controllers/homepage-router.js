@@ -15,7 +15,8 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
         recipes,
         loggedIn: req.session.loggedIn
-    });
+    })
+
 
 });
 
