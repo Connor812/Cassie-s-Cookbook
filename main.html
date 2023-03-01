@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,44 +8,60 @@
     <title>Lets Cook!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
+
 <body>
     <header class="hero is-small is-primary is-bold">
         <div class="hero-body">
-            <div class="container">
+            <div>
                 <h1 class="title">Lets Cook!</h1>
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item">
-                            Home
-                        </a>
+                <div>
+                    <div class="navbar-start columns">
 
-                        <a class="navbar-item">
-                            Dashboard
-                        </a>
+                        <div class="column">
+                            <a>
+                                Home
+                            </a>
+                        </div>
 
-                        <a class="navbar-item">
-                            Recipes
-                        </a>
-                        <!-- {{#if logged_in}} -->
-                        <button id="logout" class="navbar-item">
-                            Logout
-                        </button>
-                        <!-- {{/if}} -->
+                        <div class="column">
+                            <a>
+                                Dashboard
+                            </a>
+                        </div>
+
+                        <div class="column">
+                            <a>
+                                Recipes
+                            </a>
+                        </div>
+
                         
+                            <!-- {{#if logged_in}} -->
+                            <div class="column">
+                            <button id="logout">
+                                Logout
+                            </button>
+                        </div>
+                        <!-- {{/if}} -->
+
                         <!-- {{#if logged_out}} -->
-                        <a class="navbar-item" href="./login.html">
+                        <div class="column">
+                        <a href="./login.html">
                             Log In
                         </a>
-                        <!-- {{/if}} -->
+                    </div>
+                    <!-- {{/if}} -->
 
-                        <!-- {{#if logged_in}} -->
-                        <a class="navbar-item">
+                    <!-- {{#if logged_in}} -->
+                    <div class="column">
+                        <a>
                             Create Recipe
                         </a>
-                        <!-- {{/if}} -->
                     </div>
+                    <!-- {{/if}} -->
                 </div>
             </div>
+        </div>
         </div>
     </header>
 
@@ -119,6 +136,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
