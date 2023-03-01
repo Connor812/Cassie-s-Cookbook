@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lets Cook</title>
+
+    <title>Lets Cook!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -14,49 +15,54 @@
     <header class="hero is-small is-primary is-bold">
         <div class="hero-body">
             <h1 class="title">Lets Cook!</h1>
-            <div class="columns is-gapless">
-                <div class="column is-1">
+
+            <div class="navbar-start columns">
+
+                <div class="column">
                     <a href="/">
                         Home
                     </a>
                 </div>
-                <div class="column is-2">
+
+
+                <div class="column">
                     <a>
                         Dashboard
                     </a>
                 </div>
-                <div class="column is-1">
-                    <a href="/login">
-                        Login
+
+
+                <div class="column">
+                    <a>
+                        Recipes
                     </a>
                 </div>
-                <div class="column is-1">
+
+                {{#if loggedIn}}
+                <div class="column">
+                    <a href="/create_recipe">
+                        Create Recipe
+                    </a>
+                </div>
+                <div class="column">
                     <button id="logout">
-                        logout
+                        Logout
                     </button>
                 </div>
-                <div class="column is-1">
-                    <a>
-                        Recipes
+                {{else}}
+                <div class="column">
+                    <a href="/login">
+                        Log In
                     </a>
                 </div>
-                <div class="column is-1">
-                    <a>
-                        Recipes
-                    </a>
-                </div>
-                <div class="column is-1">
-                    <a class="">
-                        Recipes
-                    </a>
-                </div>
+                {{/if}}
             </div>
         </div>
     </header>
 
     {{{body}}}
 
-    </section>
+    
     <footer class="footer">
         <div class="content has-text-centered">
             <h5>Copyright © Lets Cook!</h5>
@@ -100,22 +106,33 @@
                     Contact Us!
                 </h4>
                 <p class="footer-contact-links">
-                    <a href="https://">
+
+                    <a href="https://kirkhagglund.github.io/kirk-hagglunds-portfolio/">
                         <span class="icon-text">
-                            <span>Email</span>
+                            <span>Kirk Hagglund</span>
                         </span>
                     </a>
                     <br />
-                    <a href="https://">
+                    <a href="https://connor812.github.io/Connor-Savoy-Profile/">
                         <span class="icon-text">
-                            <span>Chat with us!</span>
+                            <span>Connor Savoy</span>
+                        </span>
+                    </a>
+                    <br />
+                    <a href="https://cassiewatsonn.github.io/portfolio/">
+                        <span class="icon-text">
+                            <span>Cassandra Watson</span>
                         </span>
                     </a>
                 </p>
             </div>
         </div>
     </footer>
-    <script src="/js/logout.js"></script>
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
 </body>
 
 </html>

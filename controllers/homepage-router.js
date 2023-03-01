@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Recipe, Review, Ingedient } = require('../models');
+const { Recipe, Review, Ingredient, RecipeIngredients } = require('../models');
 
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
     const recipeData = await Recipe.findAll({
-        include: { model: Review },
+        include: { model: Review, model: RecipeIngredients },
     });
     const recipes = recipeData.map((recipe) => 
     recipe.get({ plain: true })
@@ -17,7 +17,22 @@ router.get('/', async (req, res) => {
         loggedIn: req.session.loggedIn
     })
 
+
 });
+
+router.get('/test', async (req, res) => {
+    const recipeData = await Recipe.findAll({
+        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
+    });
+    const recipes = recipeData.map((recipe) => 
+    recipe.get({ plain: true })
+    );
+
+    res.json(recipes)
+
+});
+
+
 
 router.get('/login', async (req, res) => {
     res.render('login', {

@@ -1,15 +1,28 @@
-<form class="signup-form form-card">
-    <div class="form-card-header">
-        Create Recipe
+<section class="section">
+    <div class="container">
+        <h1 class="title">Create Recipe</h1>
     </div>
-    <div class="form-input">
-        <label for="title">Title:</label>
-        <input class="input" type="text" id="username-login" />
-        <label for="blogpost">Blog Post:</label>
-        <textarea class="input" type="text" id="blogpost-textarea" placeholder="Enter Blog Post Here" cols="50" rows="17"></textarea>
-        <button class="create-blogpost-btn">Create New BlogPost!</button>
+    <div class="card py-5 px-4 ">
+        <div class="form-card-header">
+            <div class="form-input">
+                <form class="signup-form form-card">
+                    <label for="title">Title:</label>
+                    <input class="input" type="text" id="recipe" />
+                    <label for="recipe">Recipe Descriptions:</label>
+                    <textarea class="input" type="text" id="recipe-textarea" placeholder="Enter Recipe Here" cols="50"
+                        rows="17"></textarea>
+                    <h1 class="title">Ingredents</h1>
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Does this recipe contain nuts
+                    </label>
+                    <div id="ingredients"></div>
+                    <button id="add-ingredient">Add Ingredient</button>
+                    <button class="create-recipe-btn">Create New Recipe!</button>
+            </div>
+            </form>
+        </div>
 
     </div>
-</form>
-
+</section>
 <script src="/js/create-recipe.js"></script>
