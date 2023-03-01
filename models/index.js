@@ -30,18 +30,20 @@ Review.belongsTo(User, {
 });
 
 // Recipe-Ingredient Relationship
-Recipe.hasMany(Ingredient, {
-    foreignKey: 'ingredient_id',
-    onDelete: 'CASCADE',
-});
-
 Ingredient.belongsToMany(Recipe, {
     foreignKey: 'ingredient_id',
-    onDelete: 'CASCADE',
     through: {
         model: RecipeIngredients
     }
 });
+
+Recipe.belongsToMany(Ingredient, {
+    foreignKey: 'recipe_id',
+    through: {
+        model: RecipeIngredients
+    }
+});
+
 
 // Recipe-Review Relationship
 Recipe.hasMany(Review, {

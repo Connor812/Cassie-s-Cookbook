@@ -1,4 +1,4 @@
-.login-btn, .signup-btn {
+.login-btn, .signup-btn, .create-recipe-btn {
     background-color: initial;
     background-image: linear-gradient(-180deg, #28be7a, #27d3d0);
     border-radius: 6px;
@@ -27,6 +27,12 @@
     margin: 15px;
   }
   
-  .login-btn:hover, .signup-btn:hover {
+  .login-btn:hover, .signup-btn:hover, .create-recipe-btn:hover {
     box-shadow: rgba(0, 0, 0, 0.5) 0 3px 8px;
   }
+
+
+  #recipe-textarea {
+resize: none;  
+height: 300px;
+}
