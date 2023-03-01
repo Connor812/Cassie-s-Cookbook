@@ -12,7 +12,10 @@ router.get('/', async (req, res) => {
     recipe.get({ plain: true })
     );
 
-    res.status(200).json(recipes)
+    res.render('homepage', {
+        recipes,
+        loggedIn: req.session.loggedIn
+    })
 
 });
 
@@ -21,6 +24,5 @@ router.get('/login', async (req, res) => {
         logged_in: req.session.logged_in
     });
 });
-
 
 module.exports = router;
