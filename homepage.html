@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <header class="image">
+        <!-- <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" alt="pancakes"> -->
+        <h2>Recipes</h2>
+    </header>
+    <!-- <main class="recipe-cards">
+        <article class="card">
+            <div class="recipe1-image">
+
+            </div>
+            <div class="">
+                <h2 class="title">Pancakes</h2>
+                
+                <h6 class="name">Cassie</h6>
+
+                <p class="description">Fluffy pancakes perfect for a quick breakfast!</p>
+
+
+            </div>
+        </article>
+    </main> -->
+    <main class="cards">
+        <article class="card py-5 px-4 has-background-light ">
+            <figure class="pancake-image">
+                <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" width="300" height="200" alt="Placeholder image">
+            </figure>
+            <div class="recipe-input">
+              <h4 class="title is-4">{{title}}</h4>
+              <p class="name is-6">{{name}}</p>
+              <p class="description is-6">{{description}}</p>
+              <h4>Ingredients:</h4>
+              <p class="ingredients-input">{{RecipeIngredients}}</p>
+              <p class="date">{{date}}</p>
+              <p class="has-nuts">{{has_nuts}}</p>
+            </div>
+        </article>
+
+        <article class="card-content ">
+            <figure class="pancake-image">
+                <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" width="300" height="200" alt="Placeholder image">
+            </figure>
+            <div class="media-content">
+              <h4 class="title is-4">{{title}}</h4>
+              <p class="name is-6">{{name}}</p>
+              <p class="description is-6">{{description}}</p>
+              <h4>Ingredients:</h4>
+              <p class="ingredients-input">{{RecipeIngredients}}</p>
+              <p class="date">{{date}}</p>
+              <p class="has-nuts">{{has_nuts}}</p>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
