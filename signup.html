@@ -5,21 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-    <section class="hero is-small is-primary is-bold">
+    <header class="hero is-small is-primary is-bold">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">Lets Cook!</h1>
-                <a class="navbar-item navbar-start ">
-                    Home
-                </a>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            Home
+                        </a>
+
+                        <a class="navbar-item">
+                            Dashboard
+                        </a>
+
+                        <a class="navbar-item">
+                            Recipes
+                        </a>
+
+                        <a class="navbar-item">
+                            Login
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </header>
 
     <section class="section">
         <div class="container">
@@ -36,19 +52,74 @@
                 <label for="password-login">Password:</label>
                 <input class="input" type="text" id="password-login" />
                 <button class="signup-btn">Signup!</button>
-        
+
                 <a href="/login">Login instead</a>
             </div>
         </form>
-        
-        <script src="/js/signup.js"></script>
     </section>
 
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <h5>Copyright © Lets Cook!</h5>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h4 class="footer-logo has-text-weight-medium has-text-left">
+                    Lets Cook Logo Here!
+                </h4>
+                <p class="footer-description has-text-left">
+                    <!-- Lets Cook is a website for foodies who
+                     want to find new recipes to make! -->
+                </p>
+            </div>
+            <div class="column">
+                <h4 class="footer-explore has-text-weight-semibold has-text-justify">
+                    Explore
+                </h4>
+                <p class="footer-explorelinks">
+                    <a href="https://">
+                        <span class="icon-text">
+                            <span>Recipes</span>
+                        </span>
+                    </a>
+                    <br />
+                    <a href="https://">
+                        <span class="icon-text">
+                            <span>Home</span>
+                        </span>
+                    </a>
+                    <br />
+                    <a href="https://">
+                        <span class="icon-text">
+                            <span>Dashboard</span>
+                        </span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h4 class="footer-contactus has-text-weight-semibold has-text-justify">
+                    Contact Us!
+                </h4>
+                <p class="footer-contact-links">
+                    <a href="https://">
+                        <span class="icon-text">
+                            <span>Email</span>
+                        </span>
+                    </a>
+                    <br />
+                    <a href="https://">
+                        <span class="icon-text">
+                            <span>Chat with us!</span>
+                        </span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
 
 
 
-
-    <script src="/js/login.js"></script>
+    <script src="/js/signup.js"></script>
 </body>
 
 </html>
