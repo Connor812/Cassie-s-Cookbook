@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,58 +8,62 @@
     <title>Recipes</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
+
 <body>
-    <header class="image">
-        <!-- <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" alt="pancakes"> -->
+    <header class="recipe-header is-size-2 is-italic has-text-centered">
         <h2>Recipes</h2>
     </header>
-    <!-- <main class="recipe-cards">
-        <article class="card">
-            <div class="recipe1-image">
 
+    <div class="columns">
+        <div class="card m-5 column" style="width: 20rem;">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
+                </figure>
             </div>
-            <div class="">
-                <h2 class="title">Pancakes</h2>
-                
-                <h6 class="name">Cassie</h6>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Title</p>
+                        <p class="subtitle is-6">name</p>
+                    </div>
+                </div>
 
-                <p class="description">Fluffy pancakes perfect for a quick breakfast!</p>
-
-
+                <div class="content">
+                    Description
+                    <br>
+                    <h6>Ingredients:</h6>
+                    <p class="ingredients-input">{{RecipeIngredients}}</p>
+                    <p class="date">{{date}}</p>
+                    <p class="has-nuts">{{has_nuts}}</p>
+                </div>
             </div>
-        </article>
-    </main> -->
-    <main class="cards">
-        <article class="card py-5 px-4 has-background-light ">
-            <figure class="pancake-image">
-                <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" width="300" height="200" alt="Placeholder image">
-            </figure>
-            <div class="recipe-input">
-              <h4 class="title is-4">{{title}}</h4>
-              <p class="name is-6">{{name}}</p>
-              <p class="description is-6">{{description}}</p>
-              <h4>Ingredients:</h4>
-              <p class="ingredients-input">{{RecipeIngredients}}</p>
-              <p class="date">{{date}}</p>
-              <p class="has-nuts">{{has_nuts}}</p>
+        </div>
+        <div class="card m-5 column" style="width: 20rem;">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
+                </figure>
             </div>
-        </article>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Title</p>
+                        <p class="subtitle is-6">name</p>
+                    </div>
+                </div>
 
-        <article class="card-content ">
-            <figure class="pancake-image">
-                <img src="./images/chad-montano-eeqbbemH9-c-unsplash.jpg" width="300" height="200" alt="Placeholder image">
-            </figure>
-            <div class="media-content">
-              <h4 class="title is-4">{{title}}</h4>
-              <p class="name is-6">{{name}}</p>
-              <p class="description is-6">{{description}}</p>
-              <h4>Ingredients:</h4>
-              <p class="ingredients-input">{{RecipeIngredients}}</p>
-              <p class="date">{{date}}</p>
-              <p class="has-nuts">{{has_nuts}}</p>
+                <div class="content">
+                    Description
+                    <br>
+                    <h6>Ingredients:</h6>
+                    <p class="ingredients-input">{{RecipeIngredients}}</p>
+                    <p class="date">{{date}}</p>
+                    <p class="has-nuts">{{has_nuts}}</p>
+                </div>
             </div>
-        </article>
-    </main>
-
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,36 @@
+    <header class="recipe-header is-size-2 is-italic has-text-centered">
+        <h2>Recipes</h2>
+    </header>
+
+    <div class="columns">
+          {{#each recipes as |recipe|}}
+        <div class="card m-5 column" style="width: 20rem;">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{recipe.title}}</p>
+                        <p class="subtitle is-6">{{recipe.user_id}}</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    {{recipe.description}}
+                    <br>
+                    <h6>Ingredients:</h6>
+                    {{#each recipe.ingredients}}
+                    <p class="ingredients-input">{{this.name}}</p>
+                    {{/each}}
+                    <p class="date">{{recipe.date}}</p>
+                    {{#if recipe.has_nuts}}
+                    <p class="has-nuts">Warning: This recipe contains nuts!</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+         {{/each}}
+    </div>
