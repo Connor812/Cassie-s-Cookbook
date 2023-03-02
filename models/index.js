@@ -8,13 +8,12 @@ const Favourites = require('./favourites');
 
 // Association Section
 
-Recipe.belongsTo(User, {
+User.hasMany(Recipe, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+    onDelete: "CASCADE",
 });
 
-// User-Review Relationship
-User.hasMany(Review, {
+Recipe.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
