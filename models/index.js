@@ -4,6 +4,7 @@ const Recipe = require('./recipe');
 const Review = require('./review');
 const Ingredient = require('./ingredient');
 const RecipeIngredients = require('./recipe-ingredients');
+const Favourites = require('./favourites');
 
 // Association Section
 
@@ -34,6 +35,20 @@ Recipe.belongsToMany(Ingredient, {
     foreignKey: 'recipe_id',
     through: {
         model: RecipeIngredients
+    }
+});
+
+User.belongsToMany(Recipe, {
+    foreignKey: 'user_id',
+    through: {
+        model: Favourites
+    }
+});
+
+Recipe.belongsToMany(User, {
+    foreignKey: 'recipe_id',
+    through: {
+        model: Favourites
     }
 });
 
