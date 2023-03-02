@@ -7,12 +7,6 @@ const RecipeIngredients = require('./recipe-ingredients');
 
 // Association Section
 
-// User-Recipe Relationship
-// User.hasMany(Recipe, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE',
-// });
-
 Recipe.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
