@@ -35,38 +35,32 @@
                 <span class="letter">!</span>
             </h1>
 
-            <div class="navbar-start columns">
-
-                <div class="column">
+            <div>
+                <div class="navigation">
                     <a href="/">
                         Home
                     </a>
-                </div>
 
-                <div class="column">
                     <a>
                         Dashboard
                     </a>
-                </div>
 
-                <div class="column">
                     <a>
                         Recipes
                     </a>
-                </div>
-                {{#if loggedIn}}
-                <div class="column">
+
+                    {{#if loggedIn}}
+
                     <a href="/create_recipe">
                         Create Recipe
                     </a>
-                </div>
-                <div class="column">
+
                     <button id="logout">
                         Logout
                     </button>
-                </div>
-                {{else}}
-                <div class="column">
+
+                    {{else}}
+
                     <a href="/login">
                         Log In
                     </a>

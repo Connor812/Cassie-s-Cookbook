@@ -1,3 +1,19 @@
+body{
+  width: 100%;
+  height: 100vh;
+}
+.columns{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column{
+  min-width: 45%;
+}
+
+.navigation a {
+  margin: 60px;
+}
 
 .login-btn, .signup-btn, .create-recipe-btn {
     background-color: initial;
@@ -44,3 +60,46 @@ height: 300px;
   font-size: 36px;
   text-align: left;
 }
+
+ /* .columns {
+  flex-direction: flex; 
+  flex-wrap: wrap;
+ display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto); 
+}  */
+/* 
+ @media screen and (max-width: 660px){
+  .columns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+} */
+@media screen and (max-width: 320px){
+  .columns{
+    grid-template-columns: repeat(1, 1fr);
+  }
+} 
+
+/* @media screen and (min-width: 320px){
+  .card{
+    align-content: center;
+  }
+}  */
+
+/* @media screen and (min-width: 769px){
+
+  .column{
+    max-width: 45%;
+  }
+}  */
+
+/* @media screen and (min-width: 769px){
+  .card{
+    align-content: center;
+  }
+}  */
+

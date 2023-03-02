@@ -19,5 +19,19 @@
         "user_id": 2,
         "date": "(28/2/2023)",
         "has_nuts": true
+    },
+    {
+        "title": "Pancakes",
+        "description": "Yummy fluffy pancakes",
+        "user_id": 2,
+        "date": "(28/2/2023)",
+        "has_nuts": false
+    },
+    {
+        "title": "Chocolate Chip Cookies",
+        "description": "Easy to make with few ingredients!",
+        "user_id": 2,
+        "date": "(28/2/2023)",
+        "has_nuts": false
     }
 ]
