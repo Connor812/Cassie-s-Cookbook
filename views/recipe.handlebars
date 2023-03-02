@@ -1,4 +1,8 @@
- <div class="card m-5 column" style="width: 20rem;">
+ <header class="recipe-header is-size-2 is-italic has-text-centered">
+        <h2>Recipes</h2>
+    </header>
+ 
+ <div class="card m-5" style="width: 20rem;">
             <div class="card-image">
                 <figure class="image is-4by3">
                     <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
@@ -7,20 +11,20 @@
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
-                        <p class="title is-4"><a href="/recipe?id={{id}}">{{title}}</a></p>
-                        <p class="subtitle is-6">{{user.username}}</p>
+                        <p class="title is-4">{{recipe.title}}</p>
+                        <p class="subtitle is-6">{{recipe.user.username}}</p>
                     </div>
                 </div>
 
                 <div class="content">
-                    {{description}}
+                    {{recipe.description}}
                     <br>
                     <h6>Ingredients:</h6>
-                    {{#each ingredients}}
+                    {{#each recipe.ingredients}}
                     <p class="ingredients-input">{{this.name}}</p>
                     {{/each}}
-                    <p class="date">{{date}}</p>
-                    {{#if has_nuts}}
+                    <p class="date">{{recipe.date}}</p>
+                    {{#if recipe.has_nuts}}
                     <p class="has-nuts">Warning: This recipe contains nuts!</p>
                     {{/if}}
                 </div>

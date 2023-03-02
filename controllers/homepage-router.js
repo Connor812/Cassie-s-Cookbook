@@ -20,6 +20,22 @@ router.get('/', async (req, res) => {
     });
 });
 
+router.get('/recipe', withAuth, async (req, res) => {
+    console.log('works');
+    const recipeData = await Recipe.findByPk(req.query.id, {
+        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, { model: User, attributes: { exclude: ["password"]}}],
+    });
+    console.log(recipeData);
+    const recipe = recipeData.get({ plain: true })
+    console.log(recipe);
+    res.render('recipe', {
+        recipe,
+        user_id: req.session.user_id,
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+    });
+});
+
 router.get('/test', async (req, res) => {
     const recipeData = await Recipe.findAll({
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
