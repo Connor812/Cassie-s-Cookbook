@@ -52,7 +52,6 @@ Recipe.belongsToMany(User, {
     }
 });
 
-
 // Recipe-Review Relationship
 Recipe.hasMany(Review, {
     foreignKey: 'recipe_id',

@@ -4,7 +4,6 @@ const Favourites = require('../models/favourites');
 
 const withAuth = require('../utils/auth');
 
-
 router.get('/', async (req, res) => {
     const recipeData = await Recipe.findAll({
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
@@ -19,7 +18,6 @@ router.get('/', async (req, res) => {
         loggedIn: req.session.loggedIn,
         username: req.session.username
     });
-
 });
 
 router.get('/test', async (req, res) => {
@@ -31,8 +29,6 @@ router.get('/test', async (req, res) => {
     );
 
     res.json(recipes)
-
-
 });
 
 router.get('/test2', async (req, res) => {
@@ -47,7 +43,6 @@ router.get('/test2', async (req, res) => {
     );
 
     res.json(favourites)
-
 });
 
 router.get('/test3', async (req, res) => {
