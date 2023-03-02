@@ -66,6 +66,47 @@
               <a href="/create_recipe">
                 Create Recipe
               </a>
+        <div class="hero-body">
+            <h1 class="title">Lets Cook!</h1>
+
+            <div class="navbar-start columns">
+
+                <div class="column">
+                    <a href="/">
+                        Home
+                    </a>
+                </div>
+                <div class="column">
+                    <a>
+                        Dashboard
+                    </a>
+                </div>
+
+
+                <div class="column">
+                    <a>
+                        Recipes
+                    </a>
+                </div>
+
+                {{#if loggedIn}}
+                <div class="column">
+                    <a href="/create_recipe">
+                        Create Recipe
+                    </a>
+                </div>
+                <div class="column">
+                    <button id="logout">
+                        Logout
+                    </button>
+                </div>
+                {{else}}
+                <div class="column">
+                    <a href="/login">
+                        Log In
+                    </a>
+                </div>
+                {{/if}}
             </div>
             <div class="column">
               <button id="logout">

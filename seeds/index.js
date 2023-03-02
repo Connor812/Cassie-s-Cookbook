@@ -1,12 +1,13 @@
 const sequelize = require('../config/connection');
-const { Recipe, User, Ingredient, RecipeIngredients } = require('../models');
+const { Recipe, User, Ingredient, RecipeIngredients, Review } = require('../models');
 
 const recipes = require('./recipe.json');
 const users = require('./user.json');
 const ingredients = require('./ingredients.json');
 const recipeIngredients = require('./recipe-ingredients.json');
-
-
+const favourites = require('./favourites.json');
+const Favourites = require('../models/favourites');
+const reviews = require('./reviews.json');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -28,6 +29,16 @@ const seedAll = async () => {
 
 
   await RecipeIngredients.bulkCreate(recipeIngredients, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Favourites.bulkCreate(favourites, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Review.bulkCreate(reviews, {
     individualHooks: true,
     returning: true,
   });
