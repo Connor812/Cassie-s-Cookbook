@@ -15,6 +15,7 @@ Favourites.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      unique: false,
       references: { 
         model: 'user',
         key: 'id',

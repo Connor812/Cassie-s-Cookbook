@@ -2,8 +2,10 @@
         <h2>Recipes</h2>
     </header>
 
-    <div class="columns">
+    <div class="columns" id="all-recipes">
         {{#each recipes as |recipe|}}
          {{> recipe-details}}
          {{/each}}
     </div>
+
+    <script src="/js/favourites.js"></script>

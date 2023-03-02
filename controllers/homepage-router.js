@@ -53,18 +53,17 @@ router.get('/test', async (req, res) => {
 });
 
 router.get('/test2', async (req, res) => {
-    const recipeData = await User.findAll({
+    const recipeData = await User.findByPk(1, {
         attributes: {
-            exclude: ['password']
+            exclude: ['password'],
         },
-        include: [{ model: Recipe, through: Favourites }],
+        include: [{ model: Favourites, include: { model: Recipe} }, { model: Recipe }],
     });
-    const favourites = recipeData.map((recipe) =>
-        recipe.get({ plain: true })
-    );
-
-    res.json(favourites)
+    const favourites = recipeData.get({ plain: true })
+    res.json(favourites);
 });
+
+    
 
 router.get('/test3', async (req, res) => {
     const userRecipeData = await Recipe.findAll({
