@@ -12,17 +12,17 @@
                     </div>
                 </div>
 
-                <div class="content">
-                    {{description}}
-                    <br>
-                    <h6>Ingredients:</h6>
-                    {{#each ingredients}}
-                    <p class="ingredients-input">{{this.name}}</p>
-                    {{/each}}
-                    <p class="date">{{date}}</p>
-                    {{#if has_nuts}}
-                    <p class="has-nuts">Warning: This recipe contains nuts!</p>
-                    {{/if}}
-                </div>
-            </div>
+        <div class="content">
+            {{description}}
+            <br>
+            <h6>Ingredients:</h6>
+            {{#each ingredients}}
+            <p class="ingredients-input">{{this.name}}</p>
+            {{/each}}
+            <p class="date">{{date}}</p>
+            {{#if has_nuts}}
+            <p class="has-nuts">Warning: This recipe contains nuts!</p>
+            {{/if}}
         </div>
+    </div>
+</div>
