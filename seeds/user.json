@@ -5,8 +5,13 @@
         "password": "123456789"
     },
     {
-        "username": "bob",
-        "email": "bob@123.com",
-        "password": "asdasdas"
+        "username": "Kirk",
+        "email": "kirk@123.com",
+        "password": "password123"
+    },
+    {
+        "username": "Cassandra",
+        "email": "cass@123.com",
+        "password": "secret123"
     }
 ]
