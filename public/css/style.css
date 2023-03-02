@@ -38,3 +38,9 @@ resize: none;
 height: 300px;
 }
 
+.letter {
+  display: inline-block;
+  opacity: 1;
+  font-size: 36px;
+  text-align: left;
+}

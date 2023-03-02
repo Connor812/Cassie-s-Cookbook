@@ -1,18 +1,71 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"
+      type="text/javascript"
+    ></script>
     <title>Lets Cook!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header class="hero is-small is-primary is-bold">
+      <div class="hero-body">
+        <h1>
+          <span class="letter">C</span>
+          <span class="letter">o</span>
+          <span class="letter">o</span>
+          <span class="letter">k</span>
+          <span class="letter">i</span>
+          <span class="letter">n </span>
+          <span class="letter">'</span>
+          <span class="letter"> </span>
+          <span class="letter"> </span>
+          <span class="letter">T</span>
+          <span class="letter">h</span>
+          <span class="letter">e</span>
+          <span class="letter"> </span>
+          <span class="letter">B</span>
+          <span class="letter">o</span>
+          <span class="letter">o</span>
+          <span class="letter">k</span>
+          <span class="letter">s</span>
+          <span class="letter">!</span>
+        </h1>
+
+        <div class="navbar-start columns">
+
+          <div class="column">
+            <a href="/">
+              Home
+            </a>
+          </div>
+
+          <div class="column">
+            <a>
+              Dashboard
+            </a>
+          </div>
+
+          <div class="column">
+            <a>
+              Recipes
+            </a>
+          </div>
+
+          {{#if loggedIn}}
+            <div class="column">
+              <a href="/create_recipe">
+                Create Recipe
+              </a>
         <div class="hero-body">
             <h1 class="title">Lets Cook!</h1>
 
@@ -55,82 +108,96 @@
                 </div>
                 {{/if}}
             </div>
+            <div class="column">
+              <button id="logout">
+                Logout
+              </button>
+            </div>
+          {{else}}
+            <div class="column">
+              <a href="/login">
+                Log In
+              </a>
+            </div>
+          {{/if}}
         </div>
+      </div>
     </header>
 
     {{{body}}}
 
-    
     <footer class="footer">
-        <div class="content has-text-centered">
-            <h5>Copyright © Lets Cook!</h5>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <h4 class="footer-logo has-text-weight-medium has-text-left">
-                    Lets Cook Logo Here!
-                </h4>
-                <p class="footer-description has-text-left">
-                    <!-- Lets Cook is a website for foodies who
+      <div class="content has-text-centered">
+        <h5>Copyright © Lets Cook!</h5>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <h4 class="footer-logo has-text-weight-medium has-text-left">
+            Lets Cook Logo Here!
+          </h4>
+          <p class="footer-description has-text-left">
+            <!-- Lets Cook is a website for foodies who
                      want to find new recipes to make! -->
-                </p>
-            </div>
-            <div class="column">
-                <h4 class="footer-explore has-text-weight-semibold has-text-justify">
-                    Explore
-                </h4>
-                <p class="footer-explorelinks">
-                    <a href="https://">
-                        <span class="icon-text">
-                            <span>Recipes</span>
-                        </span>
-                    </a>
-                    <br />
-                    <a href="https://">
-                        <span class="icon-text">
-                            <span>Home</span>
-                        </span>
-                    </a>
-                    <br />
-                    <a href="https://">
-                        <span class="icon-text">
-                            <span>Dashboard</span>
-                        </span>
-                    </a>
-                </p>
-            </div>
-            <div class="column">
-                <h4 class="footer-contactus has-text-weight-semibold has-text-justify">
-                    Contact Us!
-                </h4>
-                <p class="footer-contact-links">
-
-                    <a href="https://kirkhagglund.github.io/kirk-hagglunds-portfolio/">
-                        <span class="icon-text">
-                            <span>Kirk Hagglund</span>
-                        </span>
-                    </a>
-                    <br />
-                    <a href="https://connor812.github.io/Connor-Savoy-Profile/">
-                        <span class="icon-text">
-                            <span>Connor Savoy</span>
-                        </span>
-                    </a>
-                    <br />
-                    <a href="https://cassiewatsonn.github.io/portfolio/">
-                        <span class="icon-text">
-                            <span>Cassandra Watson</span>
-                        </span>
-                    </a>
-                </p>
-            </div>
+          </p>
         </div>
+        <div class="column">
+          <h4 class="footer-explore has-text-weight-semibold has-text-justify">
+            Explore
+          </h4>
+          <p class="footer-explorelinks">
+            <a href="https://">
+              <span class="icon-text">
+                <span>Recipes</span>
+              </span>
+            </a>
+            <br />
+            <a href="https://">
+              <span class="icon-text">
+                <span>Home</span>
+              </span>
+            </a>
+            <br />
+            <a href="https://">
+              <span class="icon-text">
+                <span>Dashboard</span>
+              </span>
+            </a>
+          </p>
+        </div>
+        <div class="column">
+          <h4
+            class="footer-contactus has-text-weight-semibold has-text-justify"
+          >
+            Contact Us!
+          </h4>
+          <p class="footer-contact-links">
+
+            <a href="https://kirkhagglund.github.io/kirk-hagglunds-portfolio/">
+              <span class="icon-text">
+                <span>Kirk Hagglund</span>
+              </span>
+            </a>
+            <br />
+            <a href="https://connor812.github.io/Connor-Savoy-Profile/">
+              <span class="icon-text">
+                <span>Connor Savoy</span>
+              </span>
+            </a>
+            <br />
+            <a href="https://cassiewatsonn.github.io/portfolio/">
+              <span class="icon-text">
+                <span>Cassandra Watson</span>
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
     </footer>
 
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
-
-</body>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="/js/anime.js"></script>
+  </body>
 
 </html>
