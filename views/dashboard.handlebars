@@ -1,0 +1,15 @@
+<h1>Welcome, {{userData.username}}</h1>
+
+
+<div class="columns">
+    <div class="column">
+{{#each userData.favourites as |favourites|}}
+{{> favourites-details}}
+{{/each}}
+</div>
+    <div class="column">
+{{#each userData.recipes as |recipes|}}
+{{> userRecipes-details}}
+{{/each}}
+</div>
+</div>
