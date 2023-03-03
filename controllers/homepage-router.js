@@ -6,12 +6,17 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     const recipeData = await Recipe.findAll({
-        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
+        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, {
+            model: User,
+            attributes: {
+                exclude: ['password']
+            },
+        }],
     });
-    const recipes = recipeData.map((recipe) => 
-    recipe.get({ plain: true })
+    const recipes = recipeData.map((recipe) =>
+        recipe.get({ plain: true })
     );
-
+   
     res.render('homepage', {
         recipes,
         user_id: req.session.user_id,
@@ -37,26 +42,27 @@ router.get('/test', async (req, res) => {
     const recipeData = await Recipe.findAll({
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
     });
-    const recipes = recipeData.map((recipe) => 
-    recipe.get({ plain: true })
+    const recipes = recipeData.map((recipe) =>
+        recipe.get({ plain: true })
     );
 
     res.json(recipes)
 });
 
 router.get('/test2', async (req, res) => {
-    const recipeData = await User.findAll({
+    const recipeData = await User.findByPk(1, {
         attributes: {
-            exclude: ['password']
+            exclude: ['password'],
         },
-        include: [{ model: Recipe, through: Favourites }],
+        include: [{ model: Favourites, 
+            include: { model: Recipe} }, 
+            { model: Recipe }],
     });
-    const favourites = recipeData.map((recipe) => 
-    recipe.get({ plain: true })
-    );
-
-    res.json(favourites)
+    const favourites = recipeData.get({ plain: true })
+    res.json(favourites);
 });
+
+    
 
 router.get('/test3', async (req, res) => {
     const userRecipeData = await Recipe.findAll({
@@ -64,8 +70,8 @@ router.get('/test3', async (req, res) => {
             user_id: 1
         }
     });
-    const userRecipe = userRecipeData.map((recipe) => 
-    recipe.get({ plain: true })
+    const userRecipe = userRecipeData.map((recipe) =>
+        recipe.get({ plain: true })
     );
 
     res.json(userRecipe)
