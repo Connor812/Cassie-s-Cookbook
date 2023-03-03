@@ -24,8 +24,6 @@ router.get('/', async (req, res) => {
     });
 });
 
-
-
 router.get('/recipe', withAuth, async (req, res) => {
     const recipeData = await Recipe.findByPk(req.query.id, {
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, { model: User, attributes: { exclude: ["password"]}}],
