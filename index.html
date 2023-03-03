@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+
+<body>
+
+    <body>
+        <header class="hero is-small is-primary is-bold">
+            <div class="hero-body">
+                <h1>
+                    <span class="letter">C</span>
+                    <span class="letter">a</span>
+                    <span class="letter">s</span>
+                    <span class="letter">s</span>
+                    <span class="letter">i</span>
+                    <span class="letter">e </span>
+                    <span class="letter">'</span>
+                    <span class="letter">s</span>
+                    <span class="letter"> </span>
+                    <span class="letter">C</span>
+                    <span class="letter">o</span>
+                    <span class="letter">o</span>
+                    <span class="letter">k</span>
+                    <span class="letter">b</span>
+                    <span class="letter">o</span>
+                    <span class="letter">o</span>
+                    <span class="letter">k</span>
+                    <span class="letter">!</span>
+                </h1>
+
+                <div>
+                    <div class="navigation">
+                        <a href="/">
+                            Home
+                        </a>
+
+                        <a href="/dashboard">
+                            Dashboard
+                        </a>
+
+                        <a>
+                            Recipes
+                        </a>
+
+
+                        <a href="/create_recipe">
+                            Create Recipe
+                        </a>
+
+                        <button id="logout">
+                            Logout
+                        </button>
+
+
+                        <a href="/login">
+                            Log In
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="/">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" href="/dashboard">
+                        Dashboard
+                    </a>
+
+                    {{#if loggedIn}}
+                    <a class="navbar-item" href="/create_recipe">
+                        Create Recipe
+                    </a>
+
+                    <button class="navbar-item" id="logout">
+                        Logout
+                    </button>
+
+                    {{else}}
+                    <a class="navbar-item" href="/login">
+                        Login
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <h5>Copyright © Cassie's Cookbook!</h5>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h4 class="footer-logo has-text-weight-medium has-text-left">
+                        Cassie's Cookbook!
+                    </h4>
+                    <p class="footer-description has-text-left">
+                        <!-- Lets Cook is a website for foodies who
+                         want to find new recipes to make! -->
+                    </p>
+                </div>
+                <div class="column">
+                    <h4 class="footer-explore has-text-weight-semibold has-text-justify">
+                        Explore
+                    </h4>
+                    <p class="footer-explorelinks">
+                        <a href="/create_recipe">
+                            <span class="icon-text">
+                                <span>Create Recipe</span>
+                            </span>
+                        </a>
+                        <br />
+                        <a href="/">
+                            <span class="icon-text">
+                                <span>Home</span>
+                            </span>
+                        </a>
+                        <br />
+                        <a href="/dashboard">
+                            <span class="icon-text">
+                                <span>Dashboard</span>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+                <div class="column">
+                    <h4 class="footer-contactus has-text-weight-semibold has-text-justify">
+                        Contact Us!
+                    </h4>
+                    <p class="footer-contact-links">
+
+                        <a href="https://kirkhagglund.github.io/kirk-hagglunds-portfolio/">
+                            <span class="icon-text">
+                                <span>Kirk Hagglund</span>
+                            </span>
+                        </a>
+                        <br />
+                        <a href="https://connor812.github.io/Connor-Savoy-Profile/">
+                            <span class="icon-text">
+                                <span>Connor Savoy</span>
+                            </span>
+                        </a>
+                        <br />
+                        <a href="https://cassiewatsonn.github.io/portfolio/">
+                            <span class="icon-text">
+                                <span>Cassandra Watson</span>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./test.js"></script>
+    </body>
+
+</html>
