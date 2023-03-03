@@ -37,21 +37,6 @@ router.get('/recipe', withAuth, async (req, res) => {
     });
 });
 
-
-router.get('/test3', async (req, res) => {
-    const userRecipeData = await Recipe.findAll({
-        where: {
-            user_id: 1
-        }
-    });
-    const userRecipe = userRecipeData.map((recipe) =>
-        recipe.get({ plain: true })
-    );
-
-    res.json(userRecipe)
-
-});
-
 router.get('/login', async (req, res) => {
     res.render('login', {
         logged_in: req.session.logged_in

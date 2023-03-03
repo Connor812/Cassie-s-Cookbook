@@ -12,12 +12,9 @@ Review.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         recipe_id: {
             type: DataTypes.INTEGER,
@@ -32,7 +29,7 @@ Review.init(
         },
         date: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
     },
     {
