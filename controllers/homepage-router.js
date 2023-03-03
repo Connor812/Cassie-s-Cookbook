@@ -45,9 +45,9 @@ router.get('/test', async (req, res) => {
     const recipes = recipeData.map((recipe) =>
         recipe.get({ plain: true })
     );
-
     res.json(recipes)
 });
+
 
 router.get('/test2', async (req, res) => {
     const recipeData = await User.findByPk(1, {
