@@ -1,4 +1,4 @@
-<div class="card m-5 column">
+<div class="card m-5 column" id="{{id}}">
     <div class="card-image">
         <figure class="image is-4by3">
             <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
@@ -8,9 +8,7 @@
         <div>
             <div class="media-content card-title">
                 <p class="title is-4"><a href="/recipe?id={{id}}">{{title}}<span class="username"> by {{user.username}}</span></a></p>
-                <button class="favourite-btn" value="{{id}}">Favourite
-                    
-                </button>
+                <button class="favourite-btn" value="{{id}}">Favourite</button>
             </div>
             <div>{{date}}</div>
         </div>

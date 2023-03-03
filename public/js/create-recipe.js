@@ -18,7 +18,7 @@ const addIngredient = (event) => {
 
 }
 
-const submitRecipeHandler = (event) => {
+const submitRecipeHandler = async (event) => {
     event.preventDefault();
 
     let title = document.getElementById('recipe').value;
@@ -33,7 +33,7 @@ const submitRecipeHandler = (event) => {
 
     if (title && description) {
 
-        const response = fetch('/create_recipe', {
+        const response = await fetch('/create_recipe', {
             method: 'POST',
             body: JSON.stringify({ title, description, userIngredietns }),
             header: { 'Content-Type': 'application/json' },
