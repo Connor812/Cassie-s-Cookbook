@@ -1,32 +1,62 @@
- <header class="recipe-header is-size-2 is-italic has-text-centered">
-        <h2>Recipes</h2>
-    </header>
- 
- <div class="card m-5" style="width: 20rem;">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-content">
-                        <p class="title is-4">{{recipe.title}}</p>
-                        <p class="subtitle is-6">{{recipe.user.username}}</p>
-                    </div>
-                </div>
+<header class="recipe-header is-size-2 is-italic has-text-centered">
+  <h2>Recipes</h2>
+</header>
 
-                <div class="content">
-                    {{recipe.description}}
-                    <br>
-                    <h6>Ingredients:</h6>
-                    {{#each recipe.ingredients}}
-                    <p class="ingredients-input">{{this.name}}</p>
-                    {{/each}}
-                    <p class="date">{{recipe.date}}</p>
-                    {{#if recipe.has_nuts}}
-                    <p class="has-nuts">Warning: This recipe contains nuts!</p>
-                    {{/if}}
-                </div>
-            </div>
+<div class="card m-5 card-partial" style="width: 20rem;">
+  <div class="recipe-card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img
+          src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg"
+          alt="Food"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{recipe.title}}</p>
+          <p class="subtitle is-6">{{recipe.user.username}}</p>
         </div>
+      </div>
+
+      <div class="content">
+        {{recipe.description}}
+        <br />
+        <h6>Ingredients:</h6>
+        {{#each recipe.ingredients}}
+          <p class="ingredients-input">{{this.name}}</p>
+        {{/each}}
+        <p class="date">{{recipe.date}}</p>
+        {{#if recipe.has_nuts}}
+          <p class="has-nuts">Warning: This recipe contains nuts!</p>
+        {{/if}}
+      </div>
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Leave a Review!</h1>
+        </div>
+        <div class="card py-5 px-4">
+          <div class="form-card-header">
+            <div class="form-input">
+              <form class="signup-form form-card">
+                <label for="recipe">Review Contents:</label>
+                <textarea
+                  class="input"
+                  type="text"
+                  id="recipe-textarea"
+                  placeholder="Tell Us What You Think"
+                  cols="50"
+                  rows="17"
+                ></textarea>
+                <button value="{{recipe.id}}" class="create-recipe-btn">Thanks For Your Feedback!</button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

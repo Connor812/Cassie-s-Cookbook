@@ -4,6 +4,8 @@ const signupRoutes = require('./signup-routes');
 const homeRoutes = require('./homepage-router');
 const createRecipeRouter = require('./create-recipe-router');
 const favouriteRouter = require('./favourites');
+const reviewRouter = require('./review-router');
+
 
 const apiRoutes = require('./api');
 
@@ -13,5 +15,6 @@ router.use('/login', loginRouter);
 router.use('/create_recipe', createRecipeRouter);
 router.use('/favourites', favouriteRouter);
 router.use('/', homeRoutes);
+router.use('/reviews', reviewRouter);
 
 module.exports = router;

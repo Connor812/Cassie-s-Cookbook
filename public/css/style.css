@@ -24,6 +24,7 @@ body{
   margin: 60px;
 }
 
+
 .media {
   display: flex;
   flex-direction: row;
@@ -53,6 +54,15 @@ body{
 
 .favourite-btn:visited {
   background-color: linear-gradient(-180deg, var(--yellow), var(--darkYellow));
+
+.card-partial {
+  display: contents;
+}
+
+.recipe-card {
+  width: 75%;
+  margin: auto;
+
 }
 
 .login-btn, .signup-btn, .create-recipe-btn {
