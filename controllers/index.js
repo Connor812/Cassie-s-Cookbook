@@ -16,8 +16,5 @@ router.use('/login', loginRouter);
 router.use('/create_recipe', createRecipeRouter);
 router.use('/favourites', favouriteRouter);
 router.use('/reviews', reviewRouter);
-router.use('/create_review', createReview);
-router.use('/dashboard', dashboardRouter);
-router.use('/', homeRoutes);
 
 module.exports = router;
