@@ -54,6 +54,7 @@ body{
 
 .favourite-btn:visited {
   background-color: linear-gradient(-180deg, var(--yellow), var(--darkYellow));
+}
 
 .card-partial {
   display: contents;
@@ -65,7 +66,7 @@ body{
 
 }
 
-.login-btn, .signup-btn, .create-recipe-btn {
+.login-btn, .signup-btn, .create-recipe-btn, .create-review-btn {
     background-color: initial;
     background-image: linear-gradient(-180deg, var(--green), var(--cyan));
     border-radius: 6px;

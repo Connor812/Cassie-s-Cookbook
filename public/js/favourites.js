@@ -1,4 +1,4 @@
-const favouriteButton = document.querySelector('#all-recipes');
+const favouriteButton = document.querySelector('.favourite-btn');
 
 favouriteButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -9,9 +9,6 @@ favouriteButton.addEventListener('click', (event) => {
         method: "POST",
     })
     
-    // if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    // }
     event.stopPropagation();
 
 } 

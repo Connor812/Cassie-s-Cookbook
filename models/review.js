@@ -32,7 +32,7 @@ Review.init(
         },
         date: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
     },
     {

@@ -40,16 +40,16 @@
           <div class="form-card-header">
             <div class="form-input">
               <form class="signup-form form-card">
-                <label for="recipe">Review Contents:</label>
+                <label for="review">Review Contents:</label>
                 <textarea
                   class="input"
                   type="text"
-                  id="recipe-textarea"
+                  id="review-textarea"
                   placeholder="Tell Us What You Think"
                   cols="50"
                   rows="17"
                 ></textarea>
-                <button value="{{recipe.id}}" class="create-recipe-btn">Thanks For Your Feedback!</button>
+                <button id="create-review-btn" value="{{recipe.id}}" class="create-review-btn">Thanks For Your Feedback!</button>
               </form>
             </div>
 
@@ -60,3 +60,5 @@
     </div>
   </div>
 </div>
+
+<script src ="/js/create-review.js"></script>
