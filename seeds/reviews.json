@@ -1,12 +1,12 @@
 [
     {
-        "user_id": 1,
+        "username": "Connor",
         "recipe_id": 1,
         "description": "Delicious",
         "date": "(1/3/2023)"
     },
     {
-        "user_id": 2,
+        "username": "Connor",
         "recipe_id": 1,
         "description": "Bangin' biscuits!",
         "date": "(1/3/2023)"
