@@ -5,21 +5,20 @@ const addIngredient = (event) => {
     event.preventDefault();
     console.log('button worked')
 
-const newIngredient = document.createElement('input');
-const placeHolder = 'Enter Ingredient';
-newIngredient.classList.add('ingredient-input');
-newIngredient.setAttribute('type', 'text');
-newIngredient.setAttribute('placeholder', 'Enter Ingredient')
+    const newIngredient = document.createElement('input');
+    newIngredient.classList.add('ingredient-input');
+    newIngredient.setAttribute('type', 'text');
+    newIngredient.setAttribute('placeholder', 'Enter Ingredient')
 
-console.log(newIngredient)
+    console.log(newIngredient)
 
-console.log(ingredientContainer)
-ingredientContainer.appendChild(newIngredient);
+    console.log(ingredientContainer)
+    ingredientContainer.appendChild(newIngredient);
 
 
 }
 
-const submitRecipeHandler = (event => {
+const submitRecipeHandler = (event) => {
     event.preventDefault();
 
     let title = document.getElementById('recipe').value;
@@ -27,11 +26,11 @@ const submitRecipeHandler = (event => {
 
     let allIngredients = document.querySelectorAll('.ingredient-input');
     let userIngredietns = [];
-    
+
     for (let i = 0; i < allIngredients.length; i++) {
         userIngredietns.push({ name: allIngredients[i].value });
     }
-    
+
     if (title && description) {
 
         const response = fetch('/create_recipe', {
@@ -49,20 +48,13 @@ const submitRecipeHandler = (event => {
     } else {
         alert("Please Enter Recipe Name and Description");
     };
-});
-
-
-
-
-
-
-
+};
 
 document
-.querySelector('#add-ingredient')
-.addEventListener('click', addIngredient)
+    .querySelector('#add-ingredient')
+    .addEventListener('click', addIngredient)
 document
-.querySelector('.create-recipe-btn')
-.addEventListener('click', submitRecipeHandler)
+    .querySelector('.create-recipe-btn')
+    .addEventListener('click', submitRecipeHandler)
 document
-.querySelector('.ingredient-input')
+    .querySelector('.ingredient-input')

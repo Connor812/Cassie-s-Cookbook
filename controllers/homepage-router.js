@@ -57,7 +57,9 @@ router.get('/test2', async (req, res) => {
         attributes: {
             exclude: ['password'],
         },
-        include: [{ model: Favourites, include: { model: Recipe} }, { model: Recipe }],
+        include: [{ model: Favourites, 
+            include: { model: Recipe} }, 
+            { model: Recipe }],
     });
     const favourites = recipeData.get({ plain: true })
     res.json(favourites);
