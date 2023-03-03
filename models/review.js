@@ -13,11 +13,8 @@ Review.init(
             autoIncrement: true,
         },
         username: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+            type: DataTypes.STRING,
+            allowNull: false
         },
         recipe_id: {
             type: DataTypes.INTEGER,
