@@ -84,5 +84,6 @@ module.exports = {
     Recipe,
     Review,
     Ingredient,
-    RecipeIngredients
+    RecipeIngredients,
+    Favourites
 };
