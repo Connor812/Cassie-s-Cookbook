@@ -10,9 +10,10 @@ const addReview = async (event) => {
 
         const response = await fetch('/create_review', {
             method: 'POST',
-            body: JSON.stringify({ recipe_id: recipe_id, description: description }),
-            header: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ recipe_id, description }),
+            headers: { 'Content-Type': 'application/json' },
         });
+        
         console.log(recipe_id + description);
 
         if (response.ok) {

@@ -5,6 +5,7 @@ const date = require('../utils/helpers');
 // Create new review
 router.post('/', async (req, res) => {
     try {
+        console.log(req.body);
         const newReviewData = await Review.create({
             user_id: req.session.user_id,
             recipe_id: req.body.recipe_id,
