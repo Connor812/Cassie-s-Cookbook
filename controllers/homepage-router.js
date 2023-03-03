@@ -1,43 +1,82 @@
 const router = require('express').Router();
-const { Recipe, Review, Ingredient, RecipeIngredients } = require('../models');
+const { Recipe, Review, Ingredient, RecipeIngredients, User } = require('../models');
+const Favourites = require('../models/favourites');
 
 const withAuth = require('../utils/auth');
 
-
-router.get('/', withAuth, async (req, res) => {
-        const recipeData = await Recipe.findAll({
-        include: { model: Review, model: RecipeIngredients },
+router.get('/', async (req, res) => {
+    const recipeData = await Recipe.findAll({
+        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, {
+            model: User,
+            attributes: {
+                exclude: ['password']
+            },
+        }],
     });
-    const recipes = recipeData.map((recipe) => 
-    recipe.get({ plain: true })
+    const recipes = recipeData.map((recipe) =>
+        recipe.get({ plain: true })
     );
-
+   
     res.render('homepage', {
         recipes,
-        loggedIn: req.session.loggedIn
-    })
+        user_id: req.session.user_id,
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+    });
+});
 
-
+router.get('/recipe', withAuth, async (req, res) => {
+    const recipeData = await Recipe.findByPk(req.query.id, {
+        include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, { model: User, attributes: { exclude: ["password"]}}],
+    });
+    const recipe = recipeData.get({ plain: true })
+    res.render('recipe', {
+        recipe,
+        user_id: req.session.user_id,
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+    });
 });
 
 router.get('/test', async (req, res) => {
     const recipeData = await Recipe.findAll({
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }],
     });
-    const recipes = recipeData.map((recipe) => 
-    recipe.get({ plain: true })
+    const recipes = recipeData.map((recipe) =>
+        recipe.get({ plain: true })
     );
-
-    res.render('homepage', {
-        recipes,
-        loggedIn: req.session.loggedIn
-    })
-
-
-
+    res.json(recipes)
 });
 
 
+router.get('/test2', async (req, res) => {
+    const recipeData = await User.findByPk(1, {
+        attributes: {
+            exclude: ['password'],
+        },
+        include: [{ model: Favourites, 
+            include: { model: Recipe} }, 
+            { model: Recipe }],
+    });
+    const favourites = recipeData.get({ plain: true })
+    res.json(favourites);
+});
+
+    
+
+router.get('/test3', async (req, res) => {
+    const userRecipeData = await Recipe.findAll({
+        where: {
+            user_id: 1
+        }
+    });
+    const userRecipe = userRecipeData.map((recipe) =>
+        recipe.get({ plain: true })
+    );
+
+    res.json(userRecipe)
+
+});
 
 router.get('/login', async (req, res) => {
     res.render('login', {

@@ -1,5 +1,14 @@
 [
     {
-    
+        "user_id": 1,
+        "recipe_id": 1,
+        "description": "Delicious",
+        "date": "(1/3/2023)"
+    },
+    {
+        "user_id": 2,
+        "recipe_id": 1,
+        "description": "Bangin' biscuits!",
+        "date": "(1/3/2023)"
     }
 ]

@@ -35,14 +35,6 @@ User.init(
                 len: [8],
             },
         },
-        favorite_ids: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'recipe',
-                key: 'id',
-            },
-        },
     },
     {
         hooks: {

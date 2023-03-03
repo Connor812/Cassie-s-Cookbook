@@ -1,0 +1,30 @@
+<div class="card m-5 column">
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="./images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" alt="Food">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div>
+            <div class="media-content card-title">
+                <p class="title is-4"><a href="/recipe?id={{id}}">{{title}}<span class="username"> by {{user.username}}</span></a></p>
+                <button class="favourite-btn" value="{{id}}">Favourite
+                    
+                </button>
+            </div>
+            <div>{{date}}</div>
+        </div>
+
+        <div class="content">
+            {{description}}
+            <br>
+            <h6>Ingredients:</h6>
+            {{#each ingredients}}
+            <p class="ingredients-input">- {{this.name}}</p>
+            {{/each}}
+            {{#if has_nuts}}
+            <p class="has-nuts">Warning: This recipe contains nuts!</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
