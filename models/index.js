@@ -19,8 +19,8 @@ Recipe.belongsTo(User, {
     onDelete: 'CASCADE',
 });
 
-
 // Recipe-Ingredient Relationship
+
 Ingredient.belongsToMany(Recipe, {
     foreignKey: 'ingredient_id',
     through: {
@@ -34,22 +34,6 @@ Recipe.belongsToMany(Ingredient, {
         model: RecipeIngredients
     }
 });
-
-
-//Favourites assossiation
-// User.belongsToMany(Recipe, {
-//     foreignKey: 'user_id',
-//     through: {
-//         model: Favourites, as: 'favourites'
-//     }
-// });
-
-// Recipe.belongsToMany(User, {
-//     foreignKey: 'recipe_id',
-//     through: {
-//         model: Favourites
-//     }
-// });
 
 User.hasMany(Favourites, {
     foreignKey: 'user_id',
@@ -65,7 +49,6 @@ Recipe.hasMany(Favourites, {
 Favourites.belongsTo(Recipe, {
     foreignKey: 'recipe_id'
 });
-
 
 // Recipe-Review Relationship
 Recipe.hasMany(Review, {
