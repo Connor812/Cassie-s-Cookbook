@@ -1,15 +1,22 @@
-<h1>Welcome, {{userData.username}}</h1>
-
-
-<div class="columns">
-    <div class="column">
-{{#each userData.favourites as |favourites|}}
-{{> favourites-details}}
-{{/each}}
+<div class="dash-title">
+<h1 class="title is-3 dash-heading">Welcome, {{userData.username}}</h1>
 </div>
-    <div class="column">
-{{#each userData.recipes as |recipes|}}
-{{> userRecipes-details}}
-{{/each}}
-</div>
+
+<div class="columns" id="dashboard-body">
+    <div class="column dash-card">
+        <p class="title is-4">Your Favourites</p>
+        <div class="dash-cards">
+        {{#each userData.favourites as |favourites|}}
+        {{> favourites-details}}
+        {{/each}}
+        </div>
+    </div>
+    <div class="column dash-card">
+        <p class="title is-4">Your Created Recipes</p>
+        <div class="dash-cards">
+        {{#each userData.recipes as |recipes|}}
+        {{> userRecipes-details}}
+        {{/each}}
+        </div>
+    </div>
 </div>
