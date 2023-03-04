@@ -4,7 +4,6 @@ const { Recipe, Review, Ingredient, RecipeIngredients, User, Favourites } = requ
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    console.log(req.session)
     const recipeData = await Recipe.findAll({
         include: [{ model: Review }, { model: Ingredient, through: RecipeIngredients }, {
             model: User,
