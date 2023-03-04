@@ -1,20 +1,15 @@
 const ingredientContainer = document.getElementById('ingredients');
-console.log(ingredientContainer)
 
 const addIngredient = (event) => {
     event.preventDefault();
     console.log('button worked')
 
     const newIngredient = document.createElement('input');
-    newIngredient.classList.add('ingredient-input');
+    newIngredient.classList.add('ingredient-input', 'input');
     newIngredient.setAttribute('type', 'text');
     newIngredient.setAttribute('placeholder', 'Enter Ingredient')
 
-    console.log(newIngredient)
-
-    console.log(ingredientContainer)
     ingredientContainer.appendChild(newIngredient);
-
 
 }
 
@@ -23,6 +18,8 @@ const submitRecipeHandler = async (event) => {
 
     let title = document.getElementById('recipe').value;
     let description = document.getElementById('recipe-textarea').value;
+    let checkbox = document.getElementById("has-nuts");
+    let has_nuts = checkbox.checked;
 
     let allIngredients = document.querySelectorAll('.ingredient-input');
     let userIngredietns = [];
@@ -35,8 +32,8 @@ const submitRecipeHandler = async (event) => {
 
         const response = await fetch('/create_recipe', {
             method: 'POST',
-            body: JSON.stringify({ title, description, userIngredietns }),
-            header: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, description, userIngredietns, has_nuts }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
