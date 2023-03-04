@@ -2,8 +2,6 @@ const router = require('express').Router();
 const { Recipe, Ingredient, RecipeIngredients } = require('../models');
 const date = require('../utils/helpers');
 
-    // This route will render the create-recipe handlebars
-
 router.get('/', (req, res) => {
     res.render('create-recipe', {
         loggedIn: req.session.loggedIn,
