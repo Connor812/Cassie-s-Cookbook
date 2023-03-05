@@ -24,6 +24,13 @@ body{
   margin: 60px;
 }
 
+.recipe-link {
+  color: var(--black);
+}
+
+.recipe-link:hover {
+  color: var(--green);
+}
 
 .media {
   display: flex;
