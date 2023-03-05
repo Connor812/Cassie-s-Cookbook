@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class Favourites extends Model {}
+class Favourites extends Model { }
 
 Favourites.init(
   {
@@ -16,7 +16,7 @@ Favourites.init(
     user_id: {
       type: DataTypes.INTEGER,
       unique: false,
-      references: { 
+      references: {
         model: 'user',
         key: 'id',
       },
@@ -35,6 +35,12 @@ Favourites.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'favourites',
+    indexes: [
+      {
+        unique: true,
+        fields: ['user_id', 'recipe_id']
+      }
+    ]
   }
 );
 

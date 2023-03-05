@@ -8,15 +8,18 @@ router.post('/:id', async (req, res) => {
             res.redirect('/login');
             return;
         }
-        const newFavourite = Favourites.create({
+        const newFavourite = await Favourites.create({
             user_id: req.session.user_id,
             recipe_id: req.params.id
         });
         console.log(newFavourite);
         res.status(200).json(newFavourite);
+    } catch (err) {
+        if (err.name === 'SequelizeUniqueConstraintError') {
+      res.status(400).json({ message: 'This combination of user and recipe already exists.' });
+    } else {
+      res.status(500).json({ message: 'Server error.' });
     }
-    catch (err) {
-        res.status(500).json(err)
     }
 });
 
