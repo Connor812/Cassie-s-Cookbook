@@ -156,7 +156,7 @@ height: 300px;
   text-align: left;
 }
 
-@media screen and (max-width: 320px){
+@media only screen and (max-width: 320px){
   .columns{
     grid-template-columns: repeat(1, 1fr);
   }
@@ -170,5 +170,11 @@ height: 300px;
   }
   .dash-card {
     width: 90%
+  }
+
+  .cassie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
