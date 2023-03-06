@@ -28,25 +28,41 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Delete favourite
 
-router.get('/test', async (req, res) => {
+router.delete('/favourite', async (req, res) => {
     try {
-        const recipeData = await User.findByPk(1, {
-            attributes: {
-                exclude: ['password'],
-            },
-            include: [{
-                model: Favourites,
-                include: { model: Recipe }
-            },
-            { model: Recipe }],
-        });
-        const userData = recipeData.get({ plain: true });
-
-        res.json(userData)
+        console.log(req.body.favouriteId)
+    const deleteFavourite = await Favourites.destroy({
+        where: {
+            id: req.body.favouriteId
+        },
+    });
+    console.log(deleteFavourite);
+    res.status(200).json(deleteFavourite)
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
+    
+});
+
+// Delete User Recipe
+
+router.delete('/recipe', async (req, res) => {
+    try {
+        console.log(req.body.recipeId + '<<<<<<')
+    const deleteUserRecipe = await Recipe.destroy({
+        where: {
+            id: req.body.recipeId
+        },
+    });
+    console.log(deleteUserRecipe);
+    res.status(200).json(deleteUserRecipe)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+    
 });
 
 module.exports = router;

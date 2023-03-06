@@ -3,7 +3,7 @@
 </div>
 
 <div class="columns" id="dashboard-body">
-    <div class="column dash-card">
+    <div id="favourites" class="column dash-card">
         <p class="title is-4">Your Favourites</p>
         <div class="dash-cards">
         {{#each userData.favourites as |favourites|}}
@@ -11,7 +11,7 @@
         {{/each}}
         </div>
     </div>
-    <div class="column dash-card">
+    <div id="user-recipes" class="column dash-card">
         <p class="title is-4">Your Created Recipes</p>
         <div class="dash-cards">
         {{#each userData.recipes as |recipes|}}
@@ -20,3 +20,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/dashboard.js"></script>

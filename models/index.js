@@ -40,14 +40,17 @@ User.hasMany(Favourites, {
     onDelete: 'CASCADE'
 });
 Favourites.belongsTo(User, {
-    foreignKey: 'recipe_id'
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
 });
 
 Recipe.hasMany(Favourites, {
-    foreignKey: 'recipe_id'
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
 });
 Favourites.belongsTo(Recipe, {
-    foreignKey: 'recipe_id'
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
 });
 
 // Recipe-Review Relationship

@@ -40,7 +40,7 @@ const recipeImage = document.querySelectorAll('.recipe-image');
 
 for (let i = 0; i < recipeImage.length; i++) {
     let image = recipeImage[i];
-    const randomImage = Math.floor(Math.random() * images.length) + 1;
+    const randomImage = Math.floor(Math.random() * images.length - 1) + 1;
     const renderImage = images[randomImage];
     image.setAttribute('src', renderImage);
 }
