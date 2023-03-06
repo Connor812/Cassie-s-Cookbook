@@ -194,4 +194,8 @@ height: 300px;
     flex-direction: row;
     flex-wrap: nowrap;
   }
+
+  .review-section {
+    width: 100%;
+  }
 }
