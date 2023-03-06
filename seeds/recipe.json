@@ -8,29 +8,50 @@
     },
     {
         "title": "Apple Pie",
-        "description": "Any sweet/tart and crisp apple will do and you can adjust the sugar accordingly, we use a full cup of sugar for tart Granny Smith and slightly less for a sweeter apple such as Golden Delicious. Granny Smith – firm, tart and the gold standard for baking, Golden Delicious – balanced sweet/tart flavor, Jonagold – sweetness amplified by baking, Honeycrisp – ultra-crisp and sweet, Braeburn – crisp and doesn’t get mushy, Pink Lady – sweet and tart apples, hold their shape.",
+        "description": "Any sweet/tart and crisp apple will do and you can adjust the sugar accordingly, we use a full cup of sugar for tart Granny Smith and slightly less for a sweeter apple such as Golden Delicious. Granny Smith – firm, tart and the gold standard for baking.",
         "user_id": 1,
         "date": "(28/2/2023)",
         "has_nuts": false
     },
     {
         "title": "Banana Bread",
-        "description": "You likely already have all the ingredients you'll need for this banana bread recipe on hand. If not, here's what to add to your grocery list: Flour: All-purpose flour gives the banana bread structure. Baking soda: Baking soda acts as a leavener, which means it helps the banana bread rise. Salt: A pinch of salt enhances the overall flavor, but it won't make the loaf taste salty. Butter: A stick of butter lends richness, moisture, and irresistible flavor. Brown sugar: Brown sugar sweetens things up and adds a hint of warmth. Eggs: Eggs act as a binding agent, which means they hold the batter together. Bananas: Of course, you'll need bananas! Choose overripe bananas.",
+        "description": "You likely already have all the ingredients you'll need for this banana bread recipe on hand! Put those ripe bananas to use in the best banana bread recipe ever. Moist and delicious, it's easy to make—one bowl, no need for a mixer!",
         "user_id": 2,
         "date": "(28/2/2023)",
         "has_nuts": true
     },
     {
         "title": "Pancakes",
-        "description": "Yummy fluffy pancakes",
+        "description": "Perfect pancakes are easier to make than you think. This pancake recipe produces thick, fluffy, and all-around delicious pancakes with just a few ingredients that are probably already in your kitchen (and it's so much better than the boxed stuff).",
         "user_id": 2,
         "date": "(28/2/2023)",
         "has_nuts": false
     },
     {
         "title": "Chocolate Chip Cookies",
-        "description": "Easy to make with few ingredients!",
+        "description": "This is the best chocolate chip cookies recipe ever! No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time!",
         "user_id": 2,
+        "date": "(28/2/2023)",
+        "has_nuts": false
+    },
+    {
+        "title": "Brownies",
+        "description": "The BEST brownie recipe! With crispy edges, fudgy middles, and rich chocolate flavor, these homemade brownies will disappear in no time.",
+        "user_id": 3,
+        "date": "(4/3/2023)",
+        "has_nuts": false
+    },
+    {
+        "title": "Chocolate Strawberry Cheesecake",
+        "description": "So creamy and good - the strawberry flavor really comes through in the cheesecake and the chocolate crust and ganache work great with the strawberries. You will Love this!",
+        "user_id": 3,
+        "date": "(27/2/2023)",
+        "has_nuts": false
+    },
+    {
+        "title": "Sour Cream Donuts",
+        "description": "These donuts have a crisp exterior and a moist, tender, cakey interior covered in a creamy glaze. The sour cream contributes moisture and texture but the donuts themselves are not tangy at all.",
+        "user_id": 3,
         "date": "(28/2/2023)",
         "has_nuts": false
     }

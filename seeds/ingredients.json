@@ -1,17 +1,26 @@
 [
     {
-        "name": "apple"
+        "name": "Sugar"
     },
     {
-        "name": "banana"
+        "name": "Brown Sugar"
     },
     {
-        "name": "pear"
+        "name": "Butter"
     },
     {
-        "name": "corn"
+        "name": "Eggs"
     },
     {
-        "name": "potato"
+        "name": "Vanilla Extract"
+    }, 
+    {
+        "name": "Flour"
+    }, 
+    {
+        "name": "Pinch of Salt"
+    }, 
+    {
+        "name": "Baking Powder"
     }
 ]
