@@ -24,6 +24,13 @@ body{
   margin: 60px;
 }
 
+.recipe-link {
+  color: var(--black);
+}
+
+.recipe-link:hover {
+  color: var(--green);
+}
 
 .media {
   display: flex;
@@ -40,16 +47,22 @@ body{
   color: var(--black)
 }
 
-.favourite-btn {
+.favourite-btn, #add-ingredient, .delete-btn {
   font-size: 25px;
+  color: white;
   background-image: linear-gradient(-180deg, var(--green), var(--cyan));
   border-radius: 20px;
   transition-duration: 1s;
   border: none;
 }
 
-.favourite-btn:hover {
+.favourite-btn:hover, #add-ingredient:hover, .delete-btn:hover {
   background-image: linear-gradient(-180deg, var(--cyan), var(--green));
+}
+
+#add-ingredient {
+  margin: 10px;
+  padding: 5px;
 }
 
 .favourite-btn:visited {
@@ -82,6 +95,7 @@ body{
   flex-wrap: nowrap;
   align-items: center;
   width: 45%;
+  justify-content: space-around;
 }
 
 .dash-cards {
@@ -92,22 +106,25 @@ body{
   width: 80%;
 }
 
-.fav-dash {
+.fav-dash, .recipe-dash {
+  display: flex;
   border-radius: 3px;
-  box-shadow: 5px 5px 3px var(--green);
+  box-shadow: 5px 5px 3px var(--black);
+  background-color: #4a4a4a20;
   margin: 5px;
-  padding: 5px;
-  text-align: center;
+  padding: 10px;
   width: 90%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.recipe-dash {
-  border-radius: 3px;
-  box-shadow: 5px 5px 3px var(--cyan);
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
-  width: 90%;
+.fav-title, .user-recipe-title {
+  font-size: 25px;
+  color: var(--black);
+}
+
+.fav-title:hover, .user-recipe-title:hover {
+  color: var(--cyan)
 }
 
 .login-btn, .signup-btn, .create-recipe-btn, .create-review-btn {

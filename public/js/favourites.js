@@ -21,10 +21,6 @@ for (let i = 0; i < favouriteButton.length; i++) {
     });
 }
 
-
-
-
-
 const images = [
     'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
     'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80',
@@ -44,7 +40,7 @@ const recipeImage = document.querySelectorAll('.recipe-image');
 
 for (let i = 0; i < recipeImage.length; i++) {
     let image = recipeImage[i];
-    const randomImage = Math.floor(Math.random() * images.length) + 1;
+    const randomImage = Math.floor(Math.random() * images.length - 1) + 1;
     const renderImage = images[randomImage];
     image.setAttribute('src', renderImage);
 }
